@@ -12,16 +12,25 @@ public class PuckControl : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
 
-        GoBall();
+        StartBall();
     }
 
-    void GoBall()
+    public void StartBall()
     {
+        if (rb2d == null)
+            rb2d = GetComponent<Rigidbody2D>();
+
+        // Garante que a bola esteja parada antes de lançar
+        rb2d.linearVelocity = Vector2.zero;
+
+        // Direção aleatória
         float directionX = Random.Range(0, 2) == 0 ? -1f : 1f;
+
+        float directionY = Random.Range(0, 2) == 0 ? -1f : 1f;
 
         rb2d.linearVelocity = new Vector2(
             directionX * 8f,
-            Random.Range(-6f, 6f)
+            directionY * 5f
         );
     }
 
@@ -33,26 +42,27 @@ public class PuckControl : MonoBehaviour
             source.Play();
         }
 
-        // Colisão com os jogadores
+        // Colisão com Player ou IA
         if (collision.collider.CompareTag("Player") ||
             collision.collider.CompareTag("AI"))
         {
-            Rigidbody2D playerRb = collision.collider.attachedRigidbody;
-
-            float newYVelocity = rb2d.linearVelocity.y;
+            Rigidbody2D playerRb =
+                collision.collider.attachedRigidbody;
 
             if (playerRb != null)
             {
-                newYVelocity += playerRb.linearVelocity.y * 0.5f;
-            }
+                float newYVelocity =
+                    rb2d.linearVelocity.y +
+                    playerRb.linearVelocity.y * 0.5f;
 
-            rb2d.linearVelocity = new Vector2(
-                rb2d.linearVelocity.x,
-                newYVelocity
-            );
+                rb2d.linearVelocity = new Vector2(
+                    rb2d.linearVelocity.x,
+                    newYVelocity
+                );
+            }
         }
 
-        // Limita velocidade
+        // Limita velocidade máxima
         if (rb2d.linearVelocity.magnitude > maxSpeed)
         {
             rb2d.linearVelocity =
@@ -64,16 +74,12 @@ public class PuckControl : MonoBehaviour
     {
         CancelInvoke();
 
+        if (rb2d == null)
+            rb2d = GetComponent<Rigidbody2D>();
+
         rb2d.linearVelocity = Vector2.zero;
         rb2d.angularVelocity = 0f;
 
         transform.position = Vector2.zero;
-    }
-
-    public void RestartGame()
-    {
-        ResetBall();
-
-        Invoke(nameof(GoBall), 1f);
     }
 }

@@ -23,47 +23,99 @@ public class GameManager : MonoBehaviour
         if (gameOver)
             return;
 
-        if (goalType == "TopGoal")
+        if (goalType == "AIGoal")
         {
-            // A bola entrou no gol de cima
-            // Jogador de baixo marca
             playerScore++;
+
+            Debug.Log(
+                "PLAYER MARCOU! Placar: " +
+                playerScore + " x " + aiScore
+            );
         }
-        else if (goalType == "BottomGoal")
+        else if (goalType == "PlayerGoal")
         {
-            // A bola entrou no gol de baixo
-            // IA marca
             aiScore++;
+
+            Debug.Log(
+                "IA MARCOU! Placar: " +
+                playerScore + " x " + aiScore
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "Goal Type inválido: " + goalType
+            );
+
+            return;
         }
 
-        Debug.Log(
-            "Player: " + playerScore +
-            " | AI: " + aiScore
-        );
-
-        CheckWinner();
-
-if (!gameOver && theBall != null)
-{
-    PuckControl puckControl =
-        theBall.GetComponent<PuckControl>();
-
-    if (puckControl != null)
-    {
-        puckControl.RestartGame();
-    }
-}
-    }
-
-    void CheckWinner()
-    {
+        // Verifica vitória
         if (playerScore >= 10)
         {
             gameOver = true;
+            ResetBall();
+            return;
         }
-        else if (aiScore >= 10)
+
+        if (aiScore >= 10)
         {
             gameOver = true;
+            ResetBall();
+            return;
+        }
+
+        // Reseta a bola
+        ResetBall();
+
+        // Libera os gols novamente
+        ResetGoals();
+
+        // Lança novamente depois de 1 segundo
+        Invoke(nameof(RestartBall), 1f);
+    }
+
+    void ResetBall()
+    {
+        if (theBall == null)
+            return;
+
+        PuckControl puck =
+            theBall.GetComponent<PuckControl>();
+
+        if (puck != null)
+        {
+            puck.ResetBall();
+        }
+    }
+
+    void RestartBall()
+    {
+        if (gameOver)
+            return;
+
+        if (theBall == null)
+            return;
+
+        PuckControl puck =
+            theBall.GetComponent<PuckControl>();
+
+        if (puck != null)
+        {
+            puck.StartBall();
+        }
+    }
+
+    void ResetGoals()
+    {
+        GoalTrigger[] goals =
+            FindObjectsByType<GoalTrigger>(
+                FindObjectsSortMode.None
+            );
+
+        foreach (GoalTrigger goal in goals)
+        {
+            goal.ResetGoal();
         }
     }
 
@@ -72,7 +124,7 @@ if (!gameOver && theBall != null)
         if (layout != null)
             GUI.skin = layout;
 
-        // Jogador
+        // Player
         GUI.Label(
             new Rect(
                 Screen.width / 2 - 150,
@@ -96,10 +148,12 @@ if (!gameOver && theBall != null)
 
         if (gameOver)
         {
-            string winner =
-                playerScore >= 10
-                ? "PLAYER WINS!"
-                : "AI WINS!";
+            string winner;
+
+            if (playerScore >= 10)
+                winner = "PLAYER WINS!";
+            else
+                winner = "AI WINS!";
 
             GUI.Label(
                 new Rect(
@@ -127,7 +181,6 @@ if (!gameOver && theBall != null)
             return;
         }
 
-        // Botão de restart durante o jogo
         if (GUI.Button(
             new Rect(
                 Screen.width / 2 - 60,
@@ -144,19 +197,15 @@ if (!gameOver && theBall != null)
 
     void RestartGame()
     {
+        CancelInvoke();
+
         playerScore = 0;
         aiScore = 0;
         gameOver = false;
 
-        if (theBall != null)
-        {
-            PuckControl puckControl =
-                theBall.GetComponent<PuckControl>();
+        ResetGoals();
+        ResetBall();
 
-            if (puckControl != null)
-            {
-                puckControl.RestartGame();
-            }
-        }
+        Invoke(nameof(RestartBall), 1f);
     }
 }
