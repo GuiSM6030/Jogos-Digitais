@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 2
+  m_ComponentVersion: 3
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240dc342ca76cf943ad8558adc24ad1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  goalType: PlayerGoal
+  goalType: BottomGoal
 --- !u!1 &1066230666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1105,7 @@ CircleCollider2D:
   m_Radius: 1
 --- !u!212 &1066230669
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1150,6 +1151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 8425747930257184208, guid: 4ef01fee6d2f574469a563fd22fc0927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1159,7 +1161,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1066230670
 Transform:
@@ -1189,8 +1190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
   speed: 10
-  boundX: 5.5
-  boundY: 4
+  minX: -5.5
+  maxX: 5.5
+  minY: -4
+  maxY: -0.5
 --- !u!1 &1105122953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1213,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1105122954
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1255,6 +1259,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -7443756053782179069, guid: 78186155ee128b5428cd2ef9c4386173, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1264,7 +1269,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1105122955
 Transform:
@@ -1536,6 +1540,7 @@ CircleCollider2D:
   m_Radius: 1
 --- !u!212 &1311822391
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1581,6 +1586,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -4960929067914895635, guid: 9d005a2e61c67c947ba6683766f3a723, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1590,7 +1596,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1311822392
 Transform:
@@ -1619,10 +1624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99aa4a9d93d19ba4191ef9e95f84f540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AIControls
-  speed: 6
-  boundY: 4
-  boundX: 5.5
-  puck: {fileID: 0}
+  speed: 8
+  minX: -5.5
+  maxX: 5.5
+  minY: 0.5
+  maxY: 4
 --- !u!1 &1459809815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1828,7 @@ CircleCollider2D:
   m_Radius: 0.55499995
 --- !u!212 &1820279798
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1867,6 +1874,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -7428164591969390153, guid: b984586a90c9fff468527f806a4e6226, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1876,7 +1884,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1820279799
 Transform:
@@ -2003,7 +2010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuckControl
   maxSpeed: 15
-  hitSound: {fileID: 0}
 --- !u!1 &2065921773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 240dc342ca76cf943ad8558adc24ad1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalTrigger
-  goalType: AIGoal
+  goalType: TopGoal
 --- !u!1 &2079027599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,6 +2184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6195bc62e598ad64aa3f7b8de8519ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerScore: 0
+  aiScore: 0
   layout: {fileID: 0}
   theBall: {fileID: 0}
 --- !u!4 &2142414264

@@ -1,61 +1,162 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static int PlayerScore1 = 0;
-    public static int PlayerScore2 = 0;
+    public int playerScore = 0;
+    public int aiScore = 0;
 
     public GUISkin layout;
     public GameObject theBall;
 
+    private bool gameOver = false;
+
     void Start()
     {
         theBall = GameObject.FindGameObjectWithTag("Puck");
+
+        playerScore = 0;
+        aiScore = 0;
     }
 
-    // Incrementa a pontuação
-    public static void Score(string wallID)
+    public void ScoreGoal(string goalType)
     {
-        if (wallID == "RightWall")
+        if (gameOver)
+            return;
+
+        if (goalType == "TopGoal")
         {
-            PlayerScore1++;
+            // A bola entrou no gol de cima
+            // Jogador de baixo marca
+            playerScore++;
         }
-        else
+        else if (goalType == "BottomGoal")
         {
-            PlayerScore2++;
+            // A bola entrou no gol de baixo
+            // IA marca
+            aiScore++;
+        }
+
+        Debug.Log(
+            "Player: " + playerScore +
+            " | AI: " + aiScore
+        );
+
+        CheckWinner();
+
+if (!gameOver && theBall != null)
+{
+    PuckControl puckControl =
+        theBall.GetComponent<PuckControl>();
+
+    if (puckControl != null)
+    {
+        puckControl.RestartGame();
+    }
+}
+    }
+
+    void CheckWinner()
+    {
+        if (playerScore >= 10)
+        {
+            gameOver = true;
+        }
+        else if (aiScore >= 10)
+        {
+            gameOver = true;
         }
     }
 
-    // Gerencia a pontuação e fluxo do jogo
     void OnGUI()
     {
-        GUI.skin = layout;
+        if (layout != null)
+            GUI.skin = layout;
 
-        // Placar do Jogador 1 (esquerda)
-        GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + PlayerScore1);
+        // Jogador
+        GUI.Label(
+            new Rect(
+                Screen.width / 2 - 150,
+                20,
+                100,
+                100
+            ),
+            playerScore.ToString()
+        );
 
-        // Placar do Jogador 2 (direita)
-        GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + PlayerScore2);
+        // IA
+        GUI.Label(
+            new Rect(
+                Screen.width / 2 + 150,
+                20,
+                100,
+                100
+            ),
+            aiScore.ToString()
+        );
 
-        // Botão de reinício
-        if (GUI.Button(new Rect(Screen.width / 2 - 60, 35, 120, 53), "RESTART"))
+        if (gameOver)
         {
-            PlayerScore1 = 0;
-            PlayerScore2 = 0;
-            theBall.SendMessage("RestartGame", null, SendMessageOptions.RequireReceiver);
+            string winner =
+                playerScore >= 10
+                ? "PLAYER WINS!"
+                : "AI WINS!";
+
+            GUI.Label(
+                new Rect(
+                    Screen.width / 2 - 150,
+                    Screen.height / 2 - 50,
+                    400,
+                    100
+                ),
+                winner
+            );
+
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 60,
+                    Screen.height / 2 + 40,
+                    120,
+                    50
+                ),
+                "RESTART"
+            ))
+            {
+                RestartGame();
+            }
+
+            return;
         }
 
-        // Verifica vencedor
-        if (PlayerScore1 == 10)
+        // Botão de restart durante o jogo
+        if (GUI.Button(
+            new Rect(
+                Screen.width / 2 - 60,
+                35,
+                120,
+                53
+            ),
+            "RESTART"
+        ))
         {
-            GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER ONE WINS");
-            theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+            RestartGame();
         }
-        else if (PlayerScore2 == 10)
+    }
+
+    void RestartGame()
+    {
+        playerScore = 0;
+        aiScore = 0;
+        gameOver = false;
+
+        if (theBall != null)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER TWO WINS");
-            theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+            PuckControl puckControl =
+                theBall.GetComponent<PuckControl>();
+
+            if (puckControl != null)
+            {
+                puckControl.RestartGame();
+            }
         }
     }
 }

@@ -3,30 +3,66 @@ using UnityEngine;
 public class AIControls : MonoBehaviour
 {
     public float speed = 8f;
-    public float boundY = 4f;
-    public float boundX = 5.5f;
-    public GameObject puck;
+
+    // Limites laterais
+    public float minX = -5.5f;
+    public float maxX = 5.5f;
+
+    // Campo da IA
+    public float minY = 0.5f;
+    public float maxY = 4f;
+
     private Rigidbody2D rb2d;
+    private GameObject puck;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+
         puck = GameObject.FindGameObjectWithTag("Puck");
+
+        if (puck == null)
+        {
+            Debug.LogWarning(
+                "Não foi encontrado nenhum objeto com a tag Puck."
+            );
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (puck == null) return;
+        if (rb2d == null || puck == null)
+            return;
 
-        // A IA segue a bola
+        // Posição da bola
         Vector2 targetPosition = puck.transform.position;
 
-        // Limita onde a IA pode ir
-        targetPosition.x = Mathf.Clamp(targetPosition.x, -boundX, boundX);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, -boundY, boundY);
+        // Impede a IA de perseguir a bola no campo adversário
+        targetPosition.x = Mathf.Clamp(
+            targetPosition.x,
+            minX,
+            maxX
+        );
 
-        // Move a IA em dire��o � bola
-        Vector2 newPosition = Vector2.MoveTowards(rb2d.position, targetPosition, speed * Time.deltaTime);
-        rb2d.MovePosition(newPosition);
+        targetPosition.y = Mathf.Clamp(
+            targetPosition.y,
+            minY,
+            maxY
+        );
+
+        // Direção até a bola
+        Vector2 direction =
+            targetPosition - rb2d.position;
+
+        if (direction.magnitude > 0.05f)
+        {
+            direction.Normalize();
+
+            rb2d.linearVelocity = direction * speed;
+        }
+        else
+        {
+            rb2d.linearVelocity = Vector2.zero;
+        }
     }
 }
