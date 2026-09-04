@@ -2,210 +2,228 @@
 
 public class GameManager : MonoBehaviour
 {
-    public int playerScore = 0;
-    public int aiScore = 0;
+    public static int PlayerScore1 = 0;
+    public static int PlayerScore2 = 0;
 
     public GUISkin layout;
-    public GameObject theBall;
 
-    private bool gameOver = false;
+    private GameObject puck;
+    private Collider2D playerGoal;
+    private Collider2D aiGoal;
+
+    private bool goalBeingScored = false;
 
     void Start()
     {
-        theBall = GameObject.FindGameObjectWithTag("Puck");
+        PlayerScore1 = 0;
+        PlayerScore2 = 0;
 
-        playerScore = 0;
-        aiScore = 0;
+        puck = GameObject.Find("puck_0");
+
+        GameObject playerGoalObject = GameObject.Find("PlayerGoal");
+        GameObject aiGoalObject = GameObject.Find("AIGoal");
+
+        if (playerGoalObject != null)
+        {
+            playerGoal = playerGoalObject.GetComponent<Collider2D>();
+        }
+
+        if (aiGoalObject != null)
+        {
+            aiGoal = aiGoalObject.GetComponent<Collider2D>();
+        }
+
+        Debug.Log("GameManager iniciado");
+
+        if (puck == null)
+            Debug.LogError("ERRO: puck_0 não encontrado!");
+
+        if (playerGoal == null)
+            Debug.LogError("ERRO: PlayerGoal não encontrado!");
+
+        if (aiGoal == null)
+            Debug.LogError("ERRO: AIGoal não encontrado!");
     }
 
-    public void ScoreGoal(string goalType)
+    void Update()
     {
-        if (gameOver)
+        if (puck == null)
             return;
 
-        if (goalType == "AIGoal")
-        {
-            playerScore++;
+        if (goalBeingScored)
+            return;
 
-            Debug.Log(
-                "PLAYER MARCOU! Placar: " +
-                playerScore + " x " + aiScore
-            );
-        }
-        else if (goalType == "PlayerGoal")
-        {
-            aiScore++;
+        Vector2 puckPosition = puck.transform.position;
 
-            Debug.Log(
-                "IA MARCOU! Placar: " +
-                playerScore + " x " + aiScore
-            );
-        }
-        else
+        // Verifica se o puck entrou no gol do jogador
+        if (playerGoal != null && playerGoal.bounds.Contains(puckPosition))
         {
-            Debug.LogError(
-                "Goal Type inválido: " + goalType
-            );
-
+            Score("PlayerGoal");
             return;
         }
 
-        // Verifica vitória
-        if (playerScore >= 10)
+        // Verifica se o puck entrou no gol da IA
+        if (aiGoal != null && aiGoal.bounds.Contains(puckPosition))
         {
-            gameOver = true;
-            ResetBall();
+            Score("AIGoal");
             return;
-        }
-
-        if (aiScore >= 10)
-        {
-            gameOver = true;
-            ResetBall();
-            return;
-        }
-
-        // Reseta a bola
-        ResetBall();
-
-        // Libera os gols novamente
-        ResetGoals();
-
-        // Lança novamente depois de 1 segundo
-        Invoke(nameof(RestartBall), 1f);
-    }
-
-    void ResetBall()
-    {
-        if (theBall == null)
-            return;
-
-        PuckControl puck =
-            theBall.GetComponent<PuckControl>();
-
-        if (puck != null)
-        {
-            puck.ResetBall();
         }
     }
 
-    void RestartBall()
+    public static void Score(string goalID)
     {
-        if (gameOver)
-            return;
+        GameManager manager = FindObjectOfType<GameManager>();
 
-        if (theBall == null)
-            return;
-
-        PuckControl puck =
-            theBall.GetComponent<PuckControl>();
-
-        if (puck != null)
+        if (manager != null)
         {
-            puck.StartBall();
+            manager.RegisterScore(goalID);
         }
     }
 
-    void ResetGoals()
+    void RegisterScore(string goalID)
     {
-        GoalTrigger[] goals =
-            FindObjectsByType<GoalTrigger>(
-                FindObjectsSortMode.None
-            );
+        if (goalBeingScored)
+            return;
 
-        foreach (GoalTrigger goal in goals)
+        goalBeingScored = true;
+
+        if (goalID == "PlayerGoal")
         {
-            goal.ResetGoal();
+            // A bola entrou no gol do jogador
+            // Ponto para a IA
+            PlayerScore2++;
+
+            Debug.Log("GOL! Ponto para PLAYER 2");
+            Debug.Log("PLACAR: " + PlayerScore1 + " x " + PlayerScore2);
         }
+        else if (goalID == "AIGoal")
+        {
+            // A bola entrou no gol da IA
+            // Ponto para o jogador
+            PlayerScore1++;
+
+            Debug.Log("GOL! Ponto para PLAYER 1");
+            Debug.Log("PLACAR: " + PlayerScore1 + " x " + PlayerScore2);
+        }
+
+        ResetPuck();
+    }
+
+    void ResetPuck()
+    {
+        if (puck == null)
+            return;
+
+        PuckControl puckControl = puck.GetComponent<PuckControl>();
+
+        if (puckControl != null)
+        {
+            puckControl.ResetBall();
+        }
+
+        // Espera um pequeno tempo antes de liberar a próxima jogada
+        Invoke("StartNextBall", 0.5f);
+    }
+
+    void StartNextBall()
+    {
+        if (puck == null)
+            return;
+
+        if (PlayerScore1 >= 10 || PlayerScore2 >= 10)
+        {
+            return;
+        }
+
+        PuckControl puckControl = puck.GetComponent<PuckControl>();
+
+        if (puckControl != null)
+        {
+            puckControl.StartBall();
+        }
+
+        goalBeingScored = false;
     }
 
     void OnGUI()
     {
         if (layout != null)
-            GUI.skin = layout;
-
-        // Player
-        GUI.Label(
-            new Rect(
-                Screen.width / 2 - 150,
-                20,
-                100,
-                100
-            ),
-            playerScore.ToString()
-        );
-
-        // IA
-        GUI.Label(
-            new Rect(
-                Screen.width / 2 + 150,
-                20,
-                100,
-                100
-            ),
-            aiScore.ToString()
-        );
-
-        if (gameOver)
         {
-            string winner;
+            GUI.skin = layout;
+        }
 
-            if (playerScore >= 10)
-                winner = "PLAYER WINS!";
-            else
-                winner = "AI WINS!";
+        // PLACAR PLAYER 1
+        GUI.Label(
+            new Rect(Screen.width / 2 - 162, 20, 100, 100),
+            "" + PlayerScore1
+        );
 
+        // PLACAR PLAYER 2
+        GUI.Label(
+            new Rect(Screen.width / 2 + 162, 20, 100, 100),
+            "" + PlayerScore2
+        );
+
+        // BOTÃO RESTART
+        if (GUI.Button(
+            new Rect(Screen.width / 2 - 60, 35, 120, 53),
+            "RESTART"))
+        {
+            PlayerScore1 = 0;
+            PlayerScore2 = 0;
+
+            CancelInvoke("StartNextBall");
+
+            goalBeingScored = false;
+
+            if (puck != null)
+            {
+                PuckControl puckControl = puck.GetComponent<PuckControl>();
+
+                if (puckControl != null)
+                {
+                    puckControl.ResetBall();
+                    puckControl.StartBall();
+                }
+            }
+        }
+
+        // VITÓRIA PLAYER 1
+        if (PlayerScore1 >= 10)
+        {
             GUI.Label(
-                new Rect(
-                    Screen.width / 2 - 150,
-                    Screen.height / 2 - 50,
-                    400,
-                    100
-                ),
-                winner
+                new Rect(Screen.width / 2 - 150, 200, 2000, 100),
+                "PLAYER ONE WINS"
             );
 
-            if (GUI.Button(
-                new Rect(
-                    Screen.width / 2 - 60,
-                    Screen.height / 2 + 40,
-                    120,
-                    50
-                ),
-                "RESTART"
-            ))
+            if (puck != null)
             {
-                RestartGame();
+                PuckControl puckControl = puck.GetComponent<PuckControl>();
+
+                if (puckControl != null)
+                {
+                    puckControl.ResetBall();
+                }
             }
-
-            return;
         }
 
-        if (GUI.Button(
-            new Rect(
-                Screen.width / 2 - 60,
-                35,
-                120,
-                53
-            ),
-            "RESTART"
-        ))
+        // VITÓRIA PLAYER 2
+        else if (PlayerScore2 >= 10)
         {
-            RestartGame();
+            GUI.Label(
+                new Rect(Screen.width / 2 - 150, 200, 2000, 100),
+                "PLAYER TWO WINS"
+            );
+
+            if (puck != null)
+            {
+                PuckControl puckControl = puck.GetComponent<PuckControl>();
+
+                if (puckControl != null)
+                {
+                    puckControl.ResetBall();
+                }
+            }
         }
-    }
-
-    void RestartGame()
-    {
-        CancelInvoke();
-
-        playerScore = 0;
-        aiScore = 0;
-        gameOver = false;
-
-        ResetGoals();
-        ResetBall();
-
-        Invoke(nameof(RestartBall), 1f);
     }
 }

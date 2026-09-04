@@ -4,29 +4,23 @@ public class GoalTrigger : MonoBehaviour
 {
     public string goalType;
 
-    void Start()
-    {
-        Debug.Log("GOAL TRIGGER ATIVO: " + gameObject.name);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TRIGGER DETECTOU: " + other.gameObject.name);
+        Debug.Log("TRIGGER ATIVADO! Entrou: " + other.gameObject.name);
 
         if (other.CompareTag("Puck"))
         {
             Debug.Log("PUCK ENTROU NO GOL: " + goalType);
 
-            GameManager gameManager = FindFirstObjectByType<GameManager>();
+            GameManager.Score(goalType);
 
-            if (gameManager != null)
+            PuckControl puck = other.GetComponent<PuckControl>();
+
+            if (puck != null)
             {
-                gameManager.ScoreGoal(goalType);
+                puck.ResetBall();
+                puck.StartBall();
             }
         }
-    }
-
-    public void ResetGoal()
-    {
     }
 }
