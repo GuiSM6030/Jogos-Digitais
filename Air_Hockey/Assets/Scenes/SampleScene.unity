@@ -1826,6 +1826,7 @@ GameObject:
   - component: {fileID: 1820279796}
   - component: {fileID: 1820279801}
   - component: {fileID: 1820279800}
+  - component: {fileID: 1820279802}
   m_Layer: 0
   m_Name: puck_0
   m_TagString: Puck
@@ -1981,7 +1982,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 26c6e37dad8a0a244b26baf1dad81b96, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2080,6 +2081,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuckControl
   maxSpeed: 10
+--- !u!114 &1820279802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820279795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52563db9545892142884340fa561dbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::audio
 --- !u!1 &2065921773
 GameObject:
   m_ObjectHideFlags: 0
