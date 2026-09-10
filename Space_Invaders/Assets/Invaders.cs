@@ -15,6 +15,7 @@ public class Invaders : MonoBehaviour
         var vel = rb2d.linearVelocity;
         vel.x = speed;
         rb2d.linearVelocity = vel;
+        
 
     }
 
