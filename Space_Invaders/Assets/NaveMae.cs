@@ -2,18 +2,31 @@ using UnityEngine;
 
 public class NaveMae : MonoBehaviour
 {
+    [Header("Configuração da nave mãe")]
     public float velocidade = 5f;
-    public int pontos = 50;
+    public int vida = 5;
+    public int pontos = 200;
 
+    private int vidaAtual;
     private float limiteDireita;
 
     void Start()
     {
-        float alturaCam = Camera.main.orthographicSize;
-        float larguraCam = alturaCam * Camera.main.aspect;
-        Vector3 centroCam = Camera.main.transform.position;
+        vidaAtual = vida;
 
-        limiteDireita = centroCam.x + larguraCam + 1f; // +1 para sumir totalmente fora da tela
+        Camera cameraPrincipal = Camera.main;
+
+        if (cameraPrincipal == null)
+        {
+            limiteDireita = 12f;
+            return;
+        }
+
+        float alturaCam = cameraPrincipal.orthographicSize;
+        float larguraCam = alturaCam * Camera.main.aspect;
+        Vector3 centroCam = cameraPrincipal.transform.position;
+
+        limiteDireita = centroCam.x + larguraCam + 2f;
     }
 
     void Update()
@@ -22,7 +35,7 @@ public class NaveMae : MonoBehaviour
 
         if (transform.position.x > limiteDireita)
         {
-            Destroy(gameObject); // some sem ser destruída
+            Destroy(gameObject);
         }
     }
 
@@ -31,8 +44,19 @@ public class NaveMae : MonoBehaviour
         if (other.CompareTag("Missil_Player"))
         {
             Destroy(other.gameObject);
-            GameManager.instancia.AdicionarPontos(pontos);
-            Destroy(gameObject);
+
+            vidaAtual--;
+
+            if (vidaAtual <= 0)
+            {
+                if (GameManager.instancia != null)
+                {
+                    GameManager.instancia.AdicionarPontos(pontos);
+                    GameManager.instancia.VitoriaFinal();
+                }
+
+                Destroy(gameObject);
+            }
         }
     }
 }

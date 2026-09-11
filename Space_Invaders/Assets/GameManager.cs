@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public Button botaoResultado;
     public string cenaRetry = "Level1";
     public string cenaProximoNivel = "Level2";
+    public bool nivelFinal = false;
 
     [Header("Dificuldade (Opção B)")]
     public float velocidadeBase = 2.0f;
@@ -60,6 +61,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (jogoFinalizado) return;
+
+        if (nivelFinal) return;
 
         if (GameObject.FindGameObjectsWithTag("Invader").Length == 0)
         {
@@ -106,6 +109,8 @@ public class GameManager : MonoBehaviour
 
     void VerificarVitoria()
     {
+        if (nivelFinal) return;
+
         if (GameObject.FindGameObjectsWithTag("Invader").Length == 0)
         {
             Vitoria();
@@ -117,6 +122,14 @@ public class GameManager : MonoBehaviour
         if (jogoFinalizado) return;
         jogoFinalizado = true;
         MostrarResultado("Você venceu", "Próximo nível", cenaProximoNivel);
+    }
+
+    public void VitoriaFinal()
+    {
+        if (jogoFinalizado) return;
+
+        jogoFinalizado = true;
+        MostrarResultado("Parabéns! Você venceu o jogo!", "Jogar novamente", cenaRetry);
     }
 
     public void Derrota()
