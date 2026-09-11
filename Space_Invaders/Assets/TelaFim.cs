@@ -2,11 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class TelaFim : MonoBehaviour
 {
     [Header("Configuração desta tela")]
     public string mensagem = "Você venceu!";
+    public string textoBotao = "Próximo nível";
     public Color corDeFundo = new Color(0f, 0f, 0f, 0.85f);
     public string cenaParaReiniciar = "Game";
 
@@ -50,11 +52,10 @@ public class TelaFim : MonoBehaviour
 
         GameObject textoGO = new GameObject("TextoMensagem");
         textoGO.transform.SetParent(canvasGO.transform, false);
-        Text texto = textoGO.AddComponent<Text>();
+        TMP_Text texto = textoGO.AddComponent<TextMeshProUGUI>();
         texto.text = mensagem;
-        texto.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
         texto.fontSize = 60;
-        texto.alignment = TextAnchor.MiddleCenter;
+        texto.alignment = TextAlignmentOptions.Center;
         texto.color = Color.white;
 
         RectTransform textoRT = textoGO.GetComponent<RectTransform>();
@@ -77,12 +78,11 @@ public class TelaFim : MonoBehaviour
 
         GameObject textoBotaoGO = new GameObject("TextoBotao");
         textoBotaoGO.transform.SetParent(botaoGO.transform, false);
-        Text textoBotao = textoBotaoGO.AddComponent<Text>();
-        textoBotao.text = "Jogar novamente";
-        textoBotao.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        textoBotao.fontSize = 36;
-        textoBotao.alignment = TextAnchor.MiddleCenter;
-        textoBotao.color = Color.white;
+        TMP_Text textoBotaoTMP = textoBotaoGO.AddComponent<TextMeshProUGUI>();
+        textoBotaoTMP.text = textoBotao;
+        textoBotaoTMP.fontSize = 36;
+        textoBotaoTMP.alignment = TextAlignmentOptions.Center;
+        textoBotaoTMP.color = Color.white;
 
         RectTransform textoBotaoRT = textoBotaoGO.GetComponent<RectTransform>();
         textoBotaoRT.anchorMin = Vector2.zero;

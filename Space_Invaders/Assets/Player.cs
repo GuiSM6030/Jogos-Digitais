@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         float limiteMax = paredeDireita != null ? paredeDireita.position.x - 0.5f : 8f;
 
         pos.x = Mathf.Clamp(pos.x, limiteMin, limiteMax);
-        pos.y = 0f;
+        pos.y = -3f;
         pos.z = 0f;
         transform.position = pos;
     }

@@ -203,5 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Invader
   speed: 2
+  vida: 1
   pontos: 10
-  missilPrefab: {fileID: 2828565870547630249, guid: 8bc56a25cf4661e4e908faa310e25b29, type: 3}
+  missilPrefab: {fileID: 0}
+  intervaloMinimoTiro: 8
+  intervaloMaximoTiro: 12

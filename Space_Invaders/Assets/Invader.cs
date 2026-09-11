@@ -2,9 +2,35 @@ using UnityEngine;
 
 public class Invader : MonoBehaviour
 {
-    public float speed = 2.0f;
+    [Header("Configuração do invader")]
+    public float speed = 1.2f;
+    public int vida = 1;
     public int pontos = 10;
     public GameObject missilPrefab;
+
+    [Header("Cadência de tiro")]
+    public float intervaloMinimoTiro = 8f;
+    public float intervaloMaximoTiro = 12f;
+
+    private int vidaAtual;
+    private float proximoTiro;
+
+    void Start()
+    {
+        vidaAtual = vida;
+
+        float offset = Mathf.Abs(transform.position.x) * 0.08f + Mathf.Abs(transform.position.y) * 0.05f;
+        proximoTiro = Time.time + offset + Random.Range(intervaloMinimoTiro, intervaloMaximoTiro);
+    }
+
+    void Update()
+    {
+        if (Time.time >= proximoTiro)
+        {
+            Atirar();
+            proximoTiro = Time.time + Random.Range(intervaloMinimoTiro, intervaloMaximoTiro);
+        }
+    }
 
     public void Atirar()
     {
@@ -24,7 +50,16 @@ public class Invader : MonoBehaviour
         if (other.CompareTag("Missil_Player"))
         {
             Destroy(other.gameObject);
+            ReceberDano();
+        }
+    }
 
+    void ReceberDano()
+    {
+        vidaAtual--;
+
+        if (vidaAtual <= 0)
+        {
             if (GameManager.instancia != null)
             {
                 GameManager.instancia.AdicionarPontos(pontos);

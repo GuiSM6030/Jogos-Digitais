@@ -7,6 +7,7 @@ TagManager:
   - Invader
   - Missil_Invader
   - Missil_Player
+  - Wall
   layers:
   - Default
   - TransparentFX

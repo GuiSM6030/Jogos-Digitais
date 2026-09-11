@@ -14,25 +14,18 @@ public class FormacaoInvaders : MonoBehaviour
     [Header("Limites da formação")]
     public Transform paredeEsquerda;
     public Transform paredeDireita;
-    public float velocidade = 2f;
+    public float velocidade = 1.0f;
 
     private int direcao = 1;
-    private float proximoTiro;
 
     void Start()
     {
         CriarFormacao();
-        proximoTiro = Time.time + Random.Range(1f, 2f);
     }
 
     void Update()
     {
         MoverFormacao();
-
-        if (Time.time >= proximoTiro)
-        {
-            AtirarAleatorio();
-        }
     }
 
     void CriarFormacao()
@@ -78,16 +71,6 @@ public class FormacaoInvaders : MonoBehaviour
         {
             direcao *= -1;
         }
-    }
-
-    void AtirarAleatorio()
-    {
-        Invader[] invaders = GetComponentsInChildren<Invader>();
-        if (invaders == null || invaders.Length == 0) return;
-
-        Invader invaderAtirador = invaders[Random.Range(0, invaders.Length)];
-        invaderAtirador.Atirar();
-        proximoTiro = Time.time + Random.Range(1f, 2.5f);
     }
 
     public void AumentarVelocidade(float novaVelocidade)

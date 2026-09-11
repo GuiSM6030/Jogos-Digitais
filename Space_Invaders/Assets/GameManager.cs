@@ -1,25 +1,38 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
 
+    [Header("HUD")]
     public TMP_Text textoPontos;
     public TMP_Text textoVidas;
 
+    [Header("Tela de resultado")]
+    public GameObject painelResultado;
+    public TMP_Text textoResultado;
+    public TMP_Text textoBotaoResultado;
+    public Button botaoResultado;
+    public string cenaRetry = "Level1";
+    public string cenaProximoNivel = "Level2";
+
     [Header("Dificuldade (Opção B)")]
-    public float velocidadeBase = 2f;
-    public float incrementoPorInvaderDestruido = 0.05f;
-    public float velocidadeMaxima = 6f;
+    public float velocidadeBase = 1.0f;
+    public float incrementoPorInvaderDestruido = 0.015f;
+    public float velocidadeMaxima = 2.2f;
 
     private int pontuacao = 0;
     private int totalInicialDeInvaders = 0;
     private FormacaoInvaders formacaoInvaders;
+    private bool jogoFinalizado = false;
 
     void Awake()
     {
+        Time.timeScale = 1f;
+
         if (instancia == null)
         {
             instancia = this;
@@ -34,11 +47,30 @@ public class GameManager : MonoBehaviour
     {
         formacaoInvaders = FindFirstObjectByType<FormacaoInvaders>();
         AtualizarPontos();
+        AtualizarVidas(3);
         totalInicialDeInvaders = GameObject.FindGameObjectsWithTag("Invader").Length;
+
+        if (painelResultado != null)
+            painelResultado.SetActive(false);
+
+        if (botaoResultado != null)
+            botaoResultado.onClick.RemoveAllListeners();
+    }
+
+    void Update()
+    {
+        if (jogoFinalizado) return;
+
+        if (GameObject.FindGameObjectsWithTag("Invader").Length == 0)
+        {
+            Vitoria();
+        }
     }
 
     public void AdicionarPontos(int valor)
     {
+        if (jogoFinalizado) return;
+
         pontuacao += valor;
         AtualizarPontos();
         AumentarDificuldade();
@@ -82,11 +114,39 @@ public class GameManager : MonoBehaviour
 
     public void Vitoria()
     {
-        SceneManager.LoadScene("Victory");
+        if (jogoFinalizado) return;
+        jogoFinalizado = true;
+        MostrarResultado("Você venceu", "Próximo nível", cenaProximoNivel);
     }
 
     public void Derrota()
     {
-        SceneManager.LoadScene("Defeat");
+        if (jogoFinalizado) return;
+        jogoFinalizado = true;
+        MostrarResultado("Você Morreu", "Tentar novamente", cenaRetry);
+    }
+
+    void MostrarResultado(string mensagem, string textoBotao, string cenaDestino)
+    {
+        if (painelResultado != null)
+            painelResultado.SetActive(true);
+
+        if (textoResultado != null)
+            textoResultado.SetText(mensagem);
+
+        if (textoBotaoResultado != null)
+            textoBotaoResultado.SetText(textoBotao);
+
+        if (botaoResultado != null)
+        {
+            botaoResultado.onClick.RemoveAllListeners();
+            botaoResultado.onClick.AddListener(() =>
+            {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene(cenaDestino);
+            });
+        }
+
+        Time.timeScale = 0f;
     }
 }
