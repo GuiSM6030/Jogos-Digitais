@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FormacaoInvaders : MonoBehaviour
 {
-    [Header("Prefabs por linha (3 linhas)")]
+    [Header("Prefabs por linha")]
     public GameObject[] invaderPrefabsPorLinha = new GameObject[3];
 
     [Header("Posição inicial")]
@@ -18,7 +18,7 @@ public class FormacaoInvaders : MonoBehaviour
 
     private int direcao = 1;
 
-    void Start()
+    void Awake()
     {
         CriarFormacao();
     }

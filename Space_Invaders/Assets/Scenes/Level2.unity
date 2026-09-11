@@ -523,8 +523,8 @@ MonoBehaviour:
   cenaRetry: Level1
   cenaProximoNivel: Level3
   velocidadeBase: 2
-  incrementoPorInvaderDestruido: 0.05
-  velocidadeMaxima: 6
+  incrementoPorInvaderDestruido: 0.15
+  velocidadeMaxima: 8
 --- !u!4 &383143331
 Transform:
   m_ObjectHideFlags: 0

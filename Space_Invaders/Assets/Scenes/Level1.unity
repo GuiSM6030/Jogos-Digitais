@@ -1050,10 +1050,10 @@ MonoBehaviour:
   textoBotaoResultado: {fileID: 2013141227}
   botaoResultado: {fileID: 731065465}
   cenaRetry: Level1
-  cenaProximoNivel: Level3
+  cenaProximoNivel: Level2
   velocidadeBase: 2
-  incrementoPorInvaderDestruido: 0.05
-  velocidadeMaxima: 6
+  incrementoPorInvaderDestruido: 0.15
+  velocidadeMaxima: 8
 --- !u!4 &839873316
 Transform:
   m_ObjectHideFlags: 0
@@ -1668,10 +1668,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FormacaoInvaders
   invaderPrefabsPorLinha:
-  - {fileID: 2325451278887938975, guid: 91bf2ceaafa4669428341f8c9d40020b, type: 3}
-  - {fileID: 7587858034300226163, guid: a8d85fc6ce6f287478e55b8aae2a0b5c, type: 3}
-  - {fileID: 1576370443945816939, guid: 3340254fea41f144f95e5507849544e7, type: 3}
-  - {fileID: 1576370443945816939, guid: 3340254fea41f144f95e5507849544e7, type: 3}
+  - {fileID: 2448728958151547051, guid: 65b17b8c099271b41afc406079979245, type: 3}
+  - {fileID: 3422079593897469728, guid: 9bfa96061b897cc4ea120d77b3986d9f, type: 3}
+  - {fileID: 1813997314323963586, guid: 8034c3fb17823c44fb3e6cb9e94e5336, type: 3}
   origem: {x: -6, y: 4, z: 0}
   espacamentoX: 2
   espacamentoY: 1
@@ -1758,7 +1757,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1893534412498760570, guid: 54f47f625356ccc4ba1c45a82dfb6d2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

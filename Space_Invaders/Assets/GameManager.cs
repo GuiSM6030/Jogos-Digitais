@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour
     public string cenaProximoNivel = "Level2";
 
     [Header("Dificuldade (Opção B)")]
-    public float velocidadeBase = 1.0f;
-    public float incrementoPorInvaderDestruido = 0.015f;
-    public float velocidadeMaxima = 2.2f;
+    public float velocidadeBase = 2.0f;
+    public float incrementoPorInvaderDestruido = 0.15f;
+    public float velocidadeMaxima = 8.0f;
 
     private int pontuacao = 0;
     private int totalInicialDeInvaders = 0;
