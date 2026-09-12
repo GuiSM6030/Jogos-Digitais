@@ -400,7 +400,7 @@ MonoBehaviour:
   paredeEsquerda: {fileID: 207003277}
   paredeDireita: {fileID: 420398298}
   vidas: 3
-  somTiro: {fileID: 0}
+  somTiro: {fileID: 8300000, guid: 79ed919fb87a0a9479ccbf8e510c51d3, type: 3}
 --- !u!61 &223129683
 BoxCollider2D:
   m_ObjectHideFlags: 0
