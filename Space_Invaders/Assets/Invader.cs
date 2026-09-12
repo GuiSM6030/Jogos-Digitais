@@ -12,8 +12,24 @@ public class Invader : MonoBehaviour
     public float intervaloMinimoTiro = 8f;
     public float intervaloMaximoTiro = 12f;
 
+    [Header("Som")]
+    public AudioClip somTiro;
+
     private int vidaAtual;
     private float proximoTiro;
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
 
     void Start()
     {
@@ -38,6 +54,11 @@ public class Invader : MonoBehaviour
 
         GameObject missil = Instantiate(missilPrefab, transform.position, Quaternion.identity);
         missil.GetComponent<Missil>().SetDirecao(-1);
+
+        if (somTiro != null)
+        {
+            audioSource.PlayOneShot(somTiro);
+        }
     }
 
     public void AumentarVelocidade(float novaVelocidade)

@@ -522,6 +522,9 @@ MonoBehaviour:
   botaoResultado: {fileID: 1874641164}
   cenaRetry: Level1
   cenaProximoNivel: Level3
+  nivelFinal: 0
+  musicaFase: {fileID: 8300000, guid: add03733af4b1dc4382be9bad473e397, type: 3}
+  repetirMusica: 1
   velocidadeBase: 2
   incrementoPorInvaderDestruido: 0.15
   velocidadeMaxima: 8
@@ -1539,6 +1542,7 @@ MonoBehaviour:
   paredeEsquerda: {fileID: 846428153}
   paredeDireita: {fileID: 1021979473}
   vidas: 3
+  somTiro: {fileID: 0}
 --- !u!61 &1734220849
 BoxCollider2D:
   m_ObjectHideFlags: 0

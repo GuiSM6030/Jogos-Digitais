@@ -432,6 +432,8 @@ MonoBehaviour:
   cenaRetry: Level1
   cenaProximoNivel: Level1
   nivelFinal: 1
+  musicaFase: {fileID: 8300000, guid: 1e8316a597cdaaa44a6616ba96b5d17a, type: 3}
+  repetirMusica: 1
   velocidadeBase: 2
   incrementoPorInvaderDestruido: 0.15
   velocidadeMaxima: 8
@@ -1355,7 +1357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.8, y: 55.6}
+  m_AnchoredPosition: {x: -74.8, y: 68}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1517480620
@@ -1496,6 +1498,7 @@ MonoBehaviour:
   paredeEsquerda: {fileID: 846428153}
   paredeDireita: {fileID: 1021979473}
   vidas: 3
+  somTiro: {fileID: 8300000, guid: 79ed919fb87a0a9479ccbf8e510c51d3, type: 3}
 --- !u!61 &1734220849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1762,7 +1765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 220, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1877824213

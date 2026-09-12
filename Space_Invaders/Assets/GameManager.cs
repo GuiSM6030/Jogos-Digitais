@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     public string cenaProximoNivel = "Level2";
     public bool nivelFinal = false;
 
+    [Header("Som da fase")]
+    public AudioClip musicaFase;
+    public bool repetirMusica = true;
+
     [Header("Dificuldade (Opção B)")]
     public float velocidadeBase = 2.0f;
     public float incrementoPorInvaderDestruido = 0.15f;
@@ -31,10 +35,21 @@ public class GameManager : MonoBehaviour
     private SpawnerNaveMae spawnerNaveMae;
     private bool jogoFinalizado = false;
     private bool naveMaeLiberada = false;
+    private AudioSource audioSource;
 
     void Awake()
     {
         Time.timeScale = 1f;
+
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+        audioSource.loop = repetirMusica;
 
         if (instancia == null)
         {
@@ -48,6 +63,12 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (musicaFase != null)
+        {
+            audioSource.clip = musicaFase;
+            audioSource.Play();
+        }
+
         formacaoInvaders = FindFirstObjectByType<FormacaoInvaders>();
         spawnerNaveMae = FindFirstObjectByType<SpawnerNaveMae>();
         AtualizarPontos();

@@ -135,6 +135,7 @@ MonoBehaviour:
   missilPrefab: {fileID: 0}
   intervaloMinimoTiro: 4
   intervaloMaximoTiro: 8
+  somTiro: {fileID: 8300000, guid: 79ed919fb87a0a9479ccbf8e510c51d3, type: 3}
 --- !u!50 &7567193446563354135
 Rigidbody2D:
   serializedVersion: 5

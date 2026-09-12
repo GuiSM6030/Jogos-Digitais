@@ -208,3 +208,4 @@ MonoBehaviour:
   missilPrefab: {fileID: 2828565870547630249, guid: 8bc56a25cf4661e4e908faa310e25b29, type: 3}
   intervaloMinimoTiro: 4
   intervaloMaximoTiro: 8
+  somTiro: {fileID: 8300000, guid: 79ed919fb87a0a9479ccbf8e510c51d3, type: 3}

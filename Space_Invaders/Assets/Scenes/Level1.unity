@@ -400,6 +400,7 @@ MonoBehaviour:
   paredeEsquerda: {fileID: 207003277}
   paredeDireita: {fileID: 420398298}
   vidas: 3
+  somTiro: {fileID: 0}
 --- !u!61 &223129683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -582,7 +583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.8, y: 55.6}
+  m_AnchoredPosition: {x: -74.8, y: 190}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &348790047
@@ -1051,6 +1052,9 @@ MonoBehaviour:
   botaoResultado: {fileID: 731065465}
   cenaRetry: Level1
   cenaProximoNivel: Level2
+  nivelFinal: 0
+  musicaFase: {fileID: 8300000, guid: 941e7a49ad41bab4ca4741a58fe9eef7, type: 3}
+  repetirMusica: 1
   velocidadeBase: 2
   incrementoPorInvaderDestruido: 0.15
   velocidadeMaxima: 8

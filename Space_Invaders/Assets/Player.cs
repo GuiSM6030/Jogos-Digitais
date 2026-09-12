@@ -11,6 +11,23 @@ public class Player : MonoBehaviour
 
     public int vidas = 3;
 
+    [Header("Som")]
+    public AudioClip somTiro;
+
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
+
     void Update()
     {
         Mover();
@@ -48,6 +65,11 @@ public class Player : MonoBehaviour
 
         GameObject missil = Instantiate(missilPrefab, pontoDeTiro.position, Quaternion.identity);
         missil.GetComponent<Missil>().SetDirecao(1);
+
+        if (somTiro != null)
+        {
+            audioSource.PlayOneShot(somTiro);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

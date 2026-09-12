@@ -7,8 +7,24 @@ public class NaveMae : MonoBehaviour
     public int vida = 5;
     public int pontos = 200;
 
+    [Header("Som")]
+    public AudioClip somDerrota;
+
     private int vidaAtual;
     private float limiteDireita;
+    private AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    }
 
     void Start()
     {
@@ -49,6 +65,11 @@ public class NaveMae : MonoBehaviour
 
             if (vidaAtual <= 0)
             {
+                if (somDerrota != null)
+                {
+                    audioSource.PlayOneShot(somDerrota);
+                }
+
                 if (GameManager.instancia != null)
                 {
                     GameManager.instancia.AdicionarPontos(pontos);

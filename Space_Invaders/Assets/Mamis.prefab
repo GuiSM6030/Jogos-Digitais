@@ -154,3 +154,4 @@ MonoBehaviour:
   velocidade: 5
   vida: 10
   pontos: 200
+  somDerrota: {fileID: 8300000, guid: 86b5efd7709cf5e4a85f3387e20a1fca, type: 3}
