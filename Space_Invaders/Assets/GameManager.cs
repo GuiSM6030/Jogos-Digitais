@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
     private int pontuacao = 0;
     private int totalInicialDeInvaders = 0;
     private FormacaoInvaders formacaoInvaders;
+    private SpawnerNaveMae spawnerNaveMae;
     private bool jogoFinalizado = false;
+    private bool naveMaeLiberada = false;
 
     void Awake()
     {
@@ -47,6 +49,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         formacaoInvaders = FindFirstObjectByType<FormacaoInvaders>();
+        spawnerNaveMae = FindFirstObjectByType<SpawnerNaveMae>();
         AtualizarPontos();
         AtualizarVidas(3);
         totalInicialDeInvaders = GameObject.FindGameObjectsWithTag("Invader").Length;
@@ -62,11 +65,28 @@ public class GameManager : MonoBehaviour
     {
         if (jogoFinalizado) return;
 
-        if (nivelFinal) return;
+        if (nivelFinal)
+        {
+            LiberarNaveMaeQuandoInvadersAcabarem();
+            return;
+        }
 
         if (GameObject.FindGameObjectsWithTag("Invader").Length == 0)
         {
             Vitoria();
+        }
+    }
+
+    void LiberarNaveMaeQuandoInvadersAcabarem()
+    {
+        if (naveMaeLiberada || GameObject.FindGameObjectsWithTag("Invader").Length > 0)
+            return;
+
+        naveMaeLiberada = true;
+
+        if (spawnerNaveMae != null)
+        {
+            spawnerNaveMae.AtivarNaveMae();
         }
     }
 

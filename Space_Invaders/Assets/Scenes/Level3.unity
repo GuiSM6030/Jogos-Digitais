@@ -767,7 +767,8 @@ MonoBehaviour:
   invaderPrefabsPorLinha:
   - {fileID: 2325451278887938975, guid: 91bf2ceaafa4669428341f8c9d40020b, type: 3}
   - {fileID: 7587858034300226163, guid: a8d85fc6ce6f287478e55b8aae2a0b5c, type: 3}
-  - {fileID: 1576370443945816939, guid: 3340254fea41f144f95e5507849544e7, type: 3}
+  - {fileID: 7587858034300226163, guid: a8d85fc6ce6f287478e55b8aae2a0b5c, type: 3}
+  - {fileID: 2448728958151547051, guid: 65b17b8c099271b41afc406079979245, type: 3}
   - {fileID: 1576370443945816939, guid: 3340254fea41f144f95e5507849544e7, type: 3}
   origem: {x: -6, y: 4, z: 0}
   espacamentoX: 2
@@ -927,10 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnerNaveMae
   naveMaePrefab: {fileID: 6615487725298460006, guid: 619de2458899ee144bdf9def8b965d90, type: 3}
-  posicaoDeSpawn: {x: -9, y: 5, z: 0}
-  tempoMinimo: 15
-  tempoMaximo: 20
-  aparecerUmaVez: 1
+  posicaoDeSpawn: {x: -15, y: 5, z: 0}
 --- !u!4 &867420382
 Transform:
   m_ObjectHideFlags: 0

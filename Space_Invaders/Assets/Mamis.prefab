@@ -152,5 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NaveMae
   velocidade: 5
-  vida: 5
+  vida: 10
   pontos: 200
