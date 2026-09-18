@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SpaceShipGame : MonoBehaviour
 {
@@ -9,60 +11,108 @@ public class SpaceShipGame : MonoBehaviour
     public int vidasIniciais = 3;
     public int pontosParaPowerUp = 200;
     public int pontosParaVencer = 1000;
+    public float duracaoPowerUp = 15f;
+
+    [Header("Canvas")]
+    public TMP_Text textoPontos;
+    public TMP_Text textoVidas;
+    public TMP_Text textoPowerUp;
+    public GameObject painelVitoria;
+    public GameObject painelGameOver;
+
     private int vidas;
     private int pontos;
     private bool desaceleracaoAtiva;
     private bool jogoEncerrado;
-    private GUIStyle hudStyle;
-    private GUIStyle mensagemStyle;
+    private float fimPowerUp;
+    private int proximaPontuacaoPowerUp;
 
     void Awake()
     {
         WorldSpeedMultiplier = 1f;
         Parallax.SpeedMultiplier = 1f;
         vidas = vidasIniciais;
-        CriarHudStyles();
+        proximaPontuacaoPowerUp = pontosParaPowerUp;
+        AtualizarCanvas();
+
+        if (painelVitoria != null)
+            painelVitoria.SetActive(false);
+
+        if (painelGameOver != null)
+            painelGameOver.SetActive(false);
     }
 
     void Update()
     {
+        if (Keyboard.current != null && Keyboard.current.rKey.wasPressedThisFrame && jogoEncerrado)
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            return;
+        }
+
         if (jogoEncerrado)
             return;
 
-        if (Keyboard.current != null && Keyboard.current.rightArrowKey.wasPressedThisFrame && pontos >= pontosParaPowerUp)
+        if (desaceleracaoAtiva && Time.time >= fimPowerUp)
         {
-            desaceleracaoAtiva = !desaceleracaoAtiva;
-            WorldSpeedMultiplier = desaceleracaoAtiva ? 0.35f : 1f;
-            Parallax.SpeedMultiplier = WorldSpeedMultiplier;
+            desaceleracaoAtiva = false;
+            WorldSpeedMultiplier = 1f;
+            Parallax.SpeedMultiplier = 1f;
+            proximaPontuacaoPowerUp = pontos + pontosParaPowerUp;
+            AtualizarCanvas();
         }
+
+        if (Keyboard.current != null && Keyboard.current.rightArrowKey.wasPressedThisFrame && PodeUsarPowerUp())
+        {
+            pontos -= pontosParaPowerUp;
+            desaceleracaoAtiva = true;
+            fimPowerUp = Time.time + duracaoPowerUp;
+            WorldSpeedMultiplier = 0.35f;
+            Parallax.SpeedMultiplier = WorldSpeedMultiplier;
+            AtualizarCanvas();
+        }
+
+        if (desaceleracaoAtiva)
+            AtualizarCanvas();
 
     }
 
     public void AdicionarPontos(int valor)
     {
         pontos += valor;
+        AtualizarCanvas();
+
         if (pontos >= pontosParaVencer)
         {
             jogoEncerrado = true;
             WorldSpeedMultiplier = 0f;
             Parallax.SpeedMultiplier = 0f;
+
+            if (painelVitoria != null)
+                painelVitoria.SetActive(true);
         }
     }
 
     public void PerderVida()
     {
         vidas--;
+        AtualizarCanvas();
+
         if (vidas <= 0)
         {
             jogoEncerrado = true;
             WorldSpeedMultiplier = 0f;
             Parallax.SpeedMultiplier = 0f;
+
+            if (painelGameOver != null)
+                painelGameOver.SetActive(true);
         }
     }
 
     public bool PodeUsarPowerUp()
     {
-        return pontos >= pontosParaPowerUp;
+        return !desaceleracaoAtiva && pontos >= proximaPontuacaoPowerUp;
     }
 
     public bool JogoEncerrado()
@@ -70,35 +120,23 @@ public class SpaceShipGame : MonoBehaviour
         return jogoEncerrado;
     }
 
-    void CriarHudStyles()
+    void AtualizarCanvas()
     {
-        hudStyle = new GUIStyle(GUI.skin.label)
-        {
-            fontSize = 22,
-            normal = { textColor = Color.white }
-        };
-        mensagemStyle = new GUIStyle(GUI.skin.label)
-        {
-            fontSize = 42,
-            alignment = TextAnchor.MiddleCenter,
-            normal = { textColor = Color.white }
-        };
-    }
+        if (textoPontos != null)
+            textoPontos.SetText("Pontos: {0}", pontos);
 
-    void OnGUI()
-    {
-        if (hudStyle == null)
-            CriarHudStyles();
+        if (textoVidas != null)
+            textoVidas.SetText("Vidas: {0}", vidas);
 
-        GUI.Label(new Rect(20, 15, 260, 35), "Pontos: " + pontos, hudStyle);
-        GUI.Label(new Rect(20, 45, 260, 35), "Vidas: " + vidas, hudStyle);
-        string powerUp = !PodeUsarPowerUp() ? "Power-up: " + pontosParaPowerUp + " pontos" : desaceleracaoAtiva ? "Power-up: ATIVO" : "Power-up: UP para ativar";
-        GUI.Label(new Rect(20, 75, 360, 35), powerUp, hudStyle);
-
-        if (jogoEncerrado)
+        if (textoPowerUp != null)
         {
-            string mensagem = pontos >= pontosParaVencer ? "VOCÊ VENCEU!" : "GAME OVER";
-            GUI.Label(new Rect(Screen.width / 2f - 250, Screen.height / 2f - 35, 500, 70), mensagem, mensagemStyle);
+            if (desaceleracaoAtiva)
+                textoPowerUp.SetText("Power-up: ATIVO ({0}s)", Mathf.CeilToInt(Mathf.Max(0f, fimPowerUp - Time.time)));
+            else if (pontos < proximaPontuacaoPowerUp)
+                textoPowerUp.SetText("Power-up: faltam {0} pontos", proximaPontuacaoPowerUp - pontos);
+            else
+                textoPowerUp.SetText("Power-up: seta direita para ativar");
         }
     }
+
 }
