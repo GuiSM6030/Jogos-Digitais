@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
+    public static float SpeedMultiplier { get; set; } = 1f;
     public float parallaxEffect = 0.5f;
 
     private float length;
@@ -20,7 +21,7 @@ public class Parallax : MonoBehaviour
         if (length <= 0f)
             return;
 
-        transform.position += Vector3.left * Time.deltaTime * parallaxEffect;
+        transform.position += Vector3.left * Time.deltaTime * parallaxEffect * SpeedMultiplier;
 
         if (transform.position.x < -length)
         {
