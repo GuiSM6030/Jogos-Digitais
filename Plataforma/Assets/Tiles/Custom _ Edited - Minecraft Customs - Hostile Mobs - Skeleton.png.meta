@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: cbb40d1b456f5e64ea4cc95fccd6439a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3438512725291603434
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_0
+  - first:
+      213: -7960225091038095480
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_1
+  - first:
+      213: 7440301040159427303
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_2
+  - first:
+      213: -3470935478261632238
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_3
+  - first:
+      213: 774251073710938675
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_4
+  - first:
+      213: 6668161045878261867
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_5
+  - first:
+      213: -763958124413449790
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_6
+  - first:
+      213: 7758704512706180560
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_7
+  - first:
+      213: 1060298933125479771
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_8
+  - first:
+      213: -5222976399982848560
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_9
+  - first:
+      213: -5589030642854280539
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_10
+  - first:
+      213: -6782921685090061900
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_11
+  - first:
+      213: 6720221411061575673
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_12
+  - first:
+      213: -6437815672941773321
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_13
+  - first:
+      213: 885640924583350417
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_14
+  - first:
+      213: -7236031198979029020
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_15
+  - first:
+      213: -8630207684775137244
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_16
+  - first:
+      213: -4869802382296347827
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_17
+  - first:
+      213: -6204225943977286384
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_18
+  - first:
+      213: -6235879530963986811
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_19
+  - first:
+      213: -2237717636081257724
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_20
+  - first:
+      213: -2445009151555845646
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_21
+  - first:
+      213: -9136644339339415401
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_22
+  - first:
+      213: 2218348730573029893
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_23
+  - first:
+      213: 1946139229961640658
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_24
+  - first:
+      213: 3695182743560344857
+    second: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 256
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a6555f4e2f740d0800000000000000
+      internalID: -3438512725291603434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 256
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887d58c6479978190800000000000000
+      internalID: -7960225091038095480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 241
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea0ca82062414760800000000000000
+      internalID: 7440301040159427303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 256
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2133ae38292c4dfc0800000000000000
+      internalID: -3470935478261632238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 241
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33a5187df31beba00800000000000000
+      internalID: 774251073710938675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_5
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 256
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68cbac44211a8c50800000000000000
+      internalID: 6668161045878261867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 241
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9001b2220e565f0800000000000000
+      internalID: -763958124413449790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 256
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5721d95a47cab60800000000000000
+      internalID: 7758704512706180560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 241
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d7ba01340f6be00800000000000000
+      internalID: 1060298933125479771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d516c003a24487b0800000000000000
+      internalID: -5222976399982848560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_10
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 256
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2c5e50e36cf62b0800000000000000
+      internalID: -5589030642854280539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_11
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 256
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1b9e43aa83ed1a0800000000000000
+      internalID: -6782921685090061900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_12
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 256
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffac42a4c5034d50800000000000000
+      internalID: 6720221411061575673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_13
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 241
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fdfcd421c848a6a0800000000000000
+      internalID: -6437815672941773321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_14
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 204
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190d6548abd6a4c00800000000000000
+      internalID: 885640924583350417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_15
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 156
+        width: 100
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e7063176f3749b90800000000000000
+      internalID: -7236031198979029020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_16
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 183
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420b123e5d75b3880800000000000000
+      internalID: -8630207684775137244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_17
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 108
+        width: 55
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b00ecd88cfa6cb0800000000000000
+      internalID: -4869802382296347827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_18
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 133
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015a8f6106926e9a0800000000000000
+      internalID: -6204225943977286384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_19
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 60
+        width: 181
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58613ce0b94b579a0800000000000000
+      internalID: -6235879530963986811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_20
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 87
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403ffb97aa702f0e0800000000000000
+      internalID: -2237717636081257724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 29
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f14fe08125911ed0800000000000000
+      internalID: -2445009151555845646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 33
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7903792a16e143180800000000000000
+      internalID: -9136644339339415401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_23
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 33
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5028eb9ca6829ce10800000000000000
+      internalID: 2218348730573029893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_24
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 29
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dad05d8153120b10800000000000000
+      internalID: 1946139229961640658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 33
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 915511a902de74330800000000000000
+      internalID: 3695182743560344857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_0: -3438512725291603434
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_1: -7960225091038095480
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_10: -5589030642854280539
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_11: -6782921685090061900
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_12: 6720221411061575673
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_13: -6437815672941773321
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_14: 885640924583350417
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_15: -7236031198979029020
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_16: -8630207684775137244
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_17: -4869802382296347827
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_18: -6204225943977286384
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_19: -6235879530963986811
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_2: 7440301040159427303
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_20: -2237717636081257724
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_21: -2445009151555845646
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_22: -9136644339339415401
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_23: 2218348730573029893
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_24: 1946139229961640658
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_25: 3695182743560344857
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_3: -3470935478261632238
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_4: 774251073710938675
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_5: 6668161045878261867
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_6: -763958124413449790
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_7: 7758704512706180560
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_8: 1060298933125479771
+      Custom _ Edited - Minecraft Customs - Hostile Mobs - Skeleton_9: -5222976399982848560
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
