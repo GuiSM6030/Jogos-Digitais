@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidasIniciais: 3
   pontosParaPowerUp: 200
-  pontosParaVencer: 1000
+  pontosParaVencer: 500
   duracaoPowerUp: 15
   textoPontos: {fileID: 0}
   textoVidas: {fileID: 0}
