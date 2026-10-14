@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bd38851712dd0c1429daabe193fac4ff
+guid: 2886c52b71ba55549be6c14e29d78225
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5057661044126208295
-    second: Custom _ Edited - Minecraft Customs - Backgrounds - Blocks (NES-Style)_0
+      213: -5701134522281215778
+    second: Bloco_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Custom _ Edited - Minecraft Customs - Backgrounds - Blocks (NES-Style)_0
+      name: Bloco_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 144
-        height: 144
+        width: 1493
+        height: 453
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72159794ceb603640800000000000000
-      internalID: 5057661044126208295
+      spriteID: ed836be9b5081e0b0800000000000000
+      internalID: -5701134522281215778
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Custom _ Edited - Minecraft Customs - Backgrounds - Blocks (NES-Style)_0: 5057661044126208295
+      Bloco_0: -5701134522281215778
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
