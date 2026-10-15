@@ -6,8 +6,18 @@ public class CameraFollow2D : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset = new Vector3(0f, 0f, -10f);
     [SerializeField, Min(0f)] private float smoothTime = 0.12f;
+    [SerializeField, Min(0.1f)] private float orthographicSize = 3f;
 
     private Vector3 currentVelocity;
+
+    private void Awake()
+    {
+        Camera cameraComponent = GetComponent<Camera>();
+        if (cameraComponent != null && cameraComponent.orthographic)
+        {
+            cameraComponent.orthographicSize = orthographicSize;
+        }
+    }
 
     private void LateUpdate()
     {
