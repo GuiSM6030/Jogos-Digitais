@@ -87,6 +87,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth == 0)
         {
+            AudioManager.PlaySfx("SteveDeath");
             StartCoroutine(PlayDeathAnimation());
         }
     }

@@ -21,6 +21,8 @@ public class GameStartMenu : MonoBehaviour
 
     private void Awake()
     {
+        _ = AudioManager.Instance;
+
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f;
         GameScore.Reset();

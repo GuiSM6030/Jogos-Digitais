@@ -123,6 +123,7 @@ public class SpiderEnemy : MonoBehaviour
         }
 
         isDead = true;
+        AudioManager.PlaySfx("SpiderDeath");
         GameScore.AddPoints(5);
         body.linearVelocity = Vector2.zero;
         body.gravityScale = 0f;

@@ -43,6 +43,7 @@ public class DoorExit : MonoBehaviour
 
         if (CollectibleItem.HasKey)
         {
+            AudioManager.PlaySfx("Porta");
             gameMenu.ShowVictory(GameScore.CurrentScore);
         }
         else
