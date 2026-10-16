@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Collider2D bodyCollider;
     private readonly Collider2D[] groundHits = new Collider2D[8];
+    private readonly HashSet<LadderZone> ladderZones = new HashSet<LadderZone>();
     private bool jumpRequested;
     private bool isClimbing;
     private bool isAttacking;
@@ -115,8 +117,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = ReadHorizontalInput();
         float verticalInput = ReadVerticalInput();
 
-        if (ladderTilemap != null &&
-            IsTouchingLadder() &&
+        if (IsTouchingLadder() &&
             Mathf.Abs(verticalInput) > 0.01f)
         {
             SetClimbing(true);
@@ -314,6 +315,11 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsTouchingLadder()
     {
+        if (ladderZones.Count > 0)
+        {
+            return true;
+        }
+
         if (ladderTilemap == null)
         {
             return false;
@@ -338,6 +344,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+
+    internal void EnterLadderZone(LadderZone ladderZone)
+    {
+        ladderZones.Add(ladderZone);
+    }
+
+    internal void ExitLadderZone(LadderZone ladderZone)
+    {
+        ladderZones.Remove(ladderZone);
     }
 
     private bool IsGrounded()

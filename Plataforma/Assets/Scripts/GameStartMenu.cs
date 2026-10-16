@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameStartMenu : MonoBehaviour
@@ -22,6 +23,7 @@ public class GameStartMenu : MonoBehaviour
     {
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f;
+        GameScore.Reset();
 
         if (player == null)
         {
@@ -77,16 +79,7 @@ public class GameStartMenu : MonoBehaviour
 
     private void CreateMenu()
     {
-        GameObject canvasObject = new GameObject("Tela Inicial", typeof(RectTransform));
-        menuCanvas = canvasObject.AddComponent<Canvas>();
-        menuCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        menuCanvas.sortingOrder = 1000;
-
-        CanvasScaler scaler = canvasObject.AddComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1280f, 720f);
-        scaler.matchWidthOrHeight = 0.5f;
-        canvasObject.AddComponent<GraphicRaycaster>();
+        menuCanvas = CreateCanvas("Tela Inicial");
 
         CreatePanel("Fundo", menuCanvas.transform, Vector2.zero, new Vector2(1280f, 720f), BackgroundColor);
         CreatePanel("Faixa superior", menuCanvas.transform, new Vector2(0f, 350f), new Vector2(1280f, 7f), AccentColor);
@@ -202,6 +195,99 @@ public class GameStartMenu : MonoBehaviour
             TextAnchor.MiddleCenter);
 
         EventSystem.current?.SetSelectedGameObject(startButton.gameObject);
+    }
+
+    public void ShowGameOver(int score)
+    {
+        Time.timeScale = 0f;
+        menuCanvas = CreateCanvas("Tela de Derrota");
+
+        CreatePanel("Fundo", menuCanvas.transform, Vector2.zero, new Vector2(1280f, 720f), BackgroundColor);
+        CreatePanel("Faixa superior", menuCanvas.transform, new Vector2(0f, 350f), new Vector2(1280f, 7f), AccentColor);
+        CreatePanel("Friso decorativo", menuCanvas.transform, new Vector2(0f, -350f), new Vector2(1280f, 7f), AccentColor);
+
+        CreateText(
+            "Titulo da derrota",
+            menuCanvas.transform,
+            new Vector2(0f, 92f),
+            new Vector2(1000f, 90f),
+            "VOCÊ PERDEU",
+            56,
+            MainTextColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+        CreateText(
+            "Pontuacao final",
+            menuCanvas.transform,
+            new Vector2(0f, 10f),
+            new Vector2(800f, 56f),
+            $"Pontuação: {score}",
+            30,
+            AccentColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+
+        Button restartButton = CreateRestartButton();
+        EventSystem.current?.SetSelectedGameObject(restartButton.gameObject);
+    }
+
+    private Canvas CreateCanvas(string canvasName)
+    {
+        GameObject canvasObject = new GameObject(canvasName, typeof(RectTransform));
+        Canvas canvas = canvasObject.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 1000;
+
+        CanvasScaler scaler = canvasObject.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1280f, 720f);
+        scaler.matchWidthOrHeight = 0.5f;
+        canvasObject.AddComponent<GraphicRaycaster>();
+        return canvas;
+    }
+
+    private Button CreateRestartButton()
+    {
+        GameObject buttonObject = new GameObject("Botao Reiniciar", typeof(RectTransform), typeof(Image), typeof(Button));
+        buttonObject.transform.SetParent(menuCanvas.transform, false);
+
+        RectTransform rect = buttonObject.GetComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0.5f, 0.5f);
+        rect.anchorMax = new Vector2(0.5f, 0.5f);
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.anchoredPosition = new Vector2(0f, -92f);
+        rect.sizeDelta = new Vector2(280f, 62f);
+
+        Image image = buttonObject.GetComponent<Image>();
+        image.color = AccentColor;
+
+        Button button = buttonObject.GetComponent<Button>();
+        button.targetGraphic = image;
+        ColorBlock colors = button.colors;
+        colors.normalColor = AccentColor;
+        colors.highlightedColor = new Color(1f, 0.79f, 0.4f, 1f);
+        colors.pressedColor = new Color(0.78f, 0.49f, 0.16f, 1f);
+        button.colors = colors;
+        button.onClick.AddListener(RestartGame);
+
+        CreateText(
+            "Texto Reiniciar",
+            buttonObject.transform,
+            Vector2.zero,
+            new Vector2(280f, 62f),
+            "REINICIAR",
+            20,
+            BackgroundColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+
+        return button;
+    }
+
+    private void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private Button CreateStartButton()

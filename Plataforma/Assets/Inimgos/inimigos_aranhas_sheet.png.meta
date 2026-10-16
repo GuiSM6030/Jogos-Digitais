@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 0fab0674b5eb7b04da178c1fa60270e3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9016991416604657210
+    second: inimigos_aranhas_sheet_0
+  - first:
+      213: -376378528418021011
+    second: inimigos_aranhas_sheet_1
+  - first:
+      213: -8481741957385056362
+    second: inimigos_aranhas_sheet_2
+  - first:
+      213: -3625357055085358191
+    second: inimigos_aranhas_sheet_3
+  - first:
+      213: 6795079112569373868
+    second: inimigos_aranhas_sheet_4
+  - first:
+      213: 2023864123306760263
+    second: inimigos_aranhas_sheet_5
+  - first:
+      213: 7871015370443456490
+    second: inimigos_aranhas_sheet_6
+  - first:
+      213: -1191522576026221009
+    second: inimigos_aranhas_sheet_7
+  - first:
+      213: 1725060198738548281
+    second: inimigos_aranhas_sheet_8
+  - first:
+      213: -1823880345702470556
+    second: inimigos_aranhas_sheet_9
+  - first:
+      213: 7393227803011130304
+    second: inimigos_aranhas_sheet_10
+  - first:
+      213: -2645968451425807475
+    second: inimigos_aranhas_sheet_11
+  - first:
+      213: 4743036161104783586
+    second: inimigos_aranhas_sheet_12
+  - first:
+      213: -8999499323307921674
+    second: inimigos_aranhas_sheet_13
+  - first:
+      213: 4285359229686460716
+    second: inimigos_aranhas_sheet_14
+  - first:
+      213: 3691770928505751698
+    second: inimigos_aranhas_sheet_15
+  - first:
+      213: 2837909170638728654
+    second: inimigos_aranhas_sheet_16
+  - first:
+      213: 602396332028071384
+    second: inimigos_aranhas_sheet_17
+  - first:
+      213: 3594294983792414677
+    second: inimigos_aranhas_sheet_18
+  - first:
+      213: -8264850761571605417
+    second: inimigos_aranhas_sheet_19
+  - first:
+      213: -8551229390950737611
+    second: inimigos_aranhas_sheet_20
+  - first:
+      213: -8823703280352904342
+    second: inimigos_aranhas_sheet_21
+  - first:
+      213: -7194430824120571322
+    second: inimigos_aranhas_sheet_22
+  - first:
+      213: 8191353581228861786
+    second: inimigos_aranhas_sheet_23
+  - first:
+      213: 1441936766039833240
+    second: inimigos_aranhas_sheet_24
+  - first:
+      213: -1411798263381206070
+    second: inimigos_aranhas_sheet_25
+  - first:
+      213: 812451695784477895
+    second: inimigos_aranhas_sheet_26
+  - first:
+      213: 6098079345492708882
+    second: inimigos_aranhas_sheet_27
+  - first:
+      213: -7884894428971951367
+    second: inimigos_aranhas_sheet_28
+  - first:
+      213: -1274823416512627157
+    second: inimigos_aranhas_sheet_29
+  - first:
+      213: 414414730650113677
+    second: inimigos_aranhas_sheet_30
+  - first:
+      213: 8940376032190112467
+    second: inimigos_aranhas_sheet_31
+  - first:
+      213: -1762637708699039212
+    second: inimigos_aranhas_sheet_32
+  - first:
+      213: 8129714701794356833
+    second: inimigos_aranhas_sheet_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 200
+        width: 47
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3687795be9c22d70800000000000000
+      internalID: 9016991416604657210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 200
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d614f88f8b5d6caf0800000000000000
+      internalID: -376378528418021011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 200
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f8981c0acca4a80800000000000000
+      internalID: -8481741957385056362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 200
+        width: 44
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1935ea367f420bdc0800000000000000
+      internalID: -3625357055085358191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 200
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4cf557378fc4e50800000000000000
+      internalID: 6795079112569373868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 200
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7485b5f72b5361c10800000000000000
+      internalID: 2023864123306760263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 160
+        width: 47
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeffbe8e6c67b3d60800000000000000
+      internalID: 7871015370443456490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 160
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f264912b78cd67fe0800000000000000
+      internalID: -1191522576026221009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 160
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 936d9f96c15a0f710800000000000000
+      internalID: 1725060198738548281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 160
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46c66992d7640b6e0800000000000000
+      internalID: -1823880345702470556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 160
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c3250e04850a9660800000000000000
+      internalID: 7393227803011130304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 120
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83dfdd56b1a74bd0800000000000000
+      internalID: -2645968451425807475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 119
+        width: 43
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8ab734246a2d140800000000000000
+      internalID: 4743036161104783586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 119
+        width: 40
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6feecddfb0b5b1380800000000000000
+      internalID: -8999499323307921674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 119
+        width: 35
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21376cb387a87b30800000000000000
+      internalID: 4285359229686460716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 119
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29803b1891ecb3330800000000000000
+      internalID: 3691770928505751698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 119
+        width: 31
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdaeb4da57426720800000000000000
+      internalID: 2837909170638728654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 80
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd0888b5442c5800800000000000000
+      internalID: 602396332028071384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 80
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df4aee8e3081e130800000000000000
+      internalID: 3594294983792414677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 80
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75468ea750a5d4d80800000000000000
+      internalID: -8264850761571605417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 80
+        width: 34
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539508fdc2ee35980800000000000000
+      internalID: -8551229390950737611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 80
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bbd13dd98eb8580800000000000000
+      internalID: -8823703280352904342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 80
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a2c2f784f382c90800000000000000
+      internalID: -7194430824120571322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 40
+        width: 35
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5925c6bea88da170800000000000000
+      internalID: 8191353581228861786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 40
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a316859d9c20410800000000000000
+      internalID: 1441936766039833240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 40
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb56a0a5f8486ce0800000000000000
+      internalID: -1411798263381206070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 40
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c4c5644388664b00800000000000000
+      internalID: 812451695784477895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 40
+        width: 34
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e4d301bdab0a450800000000000000
+      internalID: 6098079345492708882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa9ba5fa4a339290800000000000000
+      internalID: -7884894428971951367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 33
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e3a636bdaee4ee0800000000000000
+      internalID: -1274823416512627157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86d61a700c40c500800000000000000
+      internalID: 414414730650113677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d2ab1512a8921c70800000000000000
+      internalID: 8940376032190112467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a0941c75ad987e0800000000000000
+      internalID: -1762637708699039212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inimigos_aranhas_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 0
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e29bdb27c82d070800000000000000
+      internalID: 8129714701794356833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      inimigos_aranhas_sheet_0: 9016991416604657210
+      inimigos_aranhas_sheet_1: -376378528418021011
+      inimigos_aranhas_sheet_10: 7393227803011130304
+      inimigos_aranhas_sheet_11: -2645968451425807475
+      inimigos_aranhas_sheet_12: 4743036161104783586
+      inimigos_aranhas_sheet_13: -8999499323307921674
+      inimigos_aranhas_sheet_14: 4285359229686460716
+      inimigos_aranhas_sheet_15: 3691770928505751698
+      inimigos_aranhas_sheet_16: 2837909170638728654
+      inimigos_aranhas_sheet_17: 602396332028071384
+      inimigos_aranhas_sheet_18: 3594294983792414677
+      inimigos_aranhas_sheet_19: -8264850761571605417
+      inimigos_aranhas_sheet_2: -8481741957385056362
+      inimigos_aranhas_sheet_20: -8551229390950737611
+      inimigos_aranhas_sheet_21: -8823703280352904342
+      inimigos_aranhas_sheet_22: -7194430824120571322
+      inimigos_aranhas_sheet_23: 8191353581228861786
+      inimigos_aranhas_sheet_24: 1441936766039833240
+      inimigos_aranhas_sheet_25: -1411798263381206070
+      inimigos_aranhas_sheet_26: 812451695784477895
+      inimigos_aranhas_sheet_27: 6098079345492708882
+      inimigos_aranhas_sheet_28: -7884894428971951367
+      inimigos_aranhas_sheet_29: -1274823416512627157
+      inimigos_aranhas_sheet_3: -3625357055085358191
+      inimigos_aranhas_sheet_30: 414414730650113677
+      inimigos_aranhas_sheet_31: 8940376032190112467
+      inimigos_aranhas_sheet_32: -1762637708699039212
+      inimigos_aranhas_sheet_33: 8129714701794356833
+      inimigos_aranhas_sheet_4: 6795079112569373868
+      inimigos_aranhas_sheet_5: 2023864123306760263
+      inimigos_aranhas_sheet_6: 7871015370443456490
+      inimigos_aranhas_sheet_7: -1191522576026221009
+      inimigos_aranhas_sheet_8: 1725060198738548281
+      inimigos_aranhas_sheet_9: -1823880345702470556
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
