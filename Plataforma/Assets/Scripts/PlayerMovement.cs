@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ataque")]
     [SerializeField] private RuntimeAnimatorController attackAnimatorController;
     [SerializeField, Min(0.01f)] private float attackDuration = 0.5f;
+    [SerializeField] private Vector2 attackHitboxSize = new Vector2(0.9f, 0.9f);
+    [SerializeField, Min(0f)] private float attackForwardOffset = 0.65f;
 
     [Header("Visual")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -264,6 +266,27 @@ public class PlayerMovement : MonoBehaviour
         animator.runtimeAnimatorController = attackAnimatorController;
         animator.speed = 1f;
         animator.Play(0, 0, 0f);
+        HitEnemiesInFront();
+    }
+
+    private void HitEnemiesInFront()
+    {
+        float facingDirection = spriteRenderer != null && (spriteRenderer.flipX != spriteFacesRight)
+            ? 1f
+            : -1f;
+        Vector2 attackCenter = bodyCollider != null
+            ? bodyCollider.bounds.center
+            : transform.position;
+        attackCenter.x += facingDirection * attackForwardOffset;
+
+        foreach (Collider2D hit in Physics2D.OverlapBoxAll(attackCenter, attackHitboxSize, 0f))
+        {
+            SpiderEnemy enemy = hit.GetComponentInParent<SpiderEnemy>();
+            if (enemy != null)
+            {
+                enemy.TakeHit();
+            }
+        }
     }
 
     private void FinishAttack()

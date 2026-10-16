@@ -24,6 +24,7 @@ public class GameStartMenu : MonoBehaviour
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f;
         GameScore.Reset();
+        CollectibleItem.ResetKey();
 
         if (player == null)
         {
@@ -231,6 +232,90 @@ public class GameStartMenu : MonoBehaviour
         EventSystem.current?.SetSelectedGameObject(restartButton.gameObject);
     }
 
+    public void ShowLockedDoor()
+    {
+        Time.timeScale = 0f;
+        menuCanvas = CreateCanvas("Passagem Bloqueada");
+        CreatePanel("Fundo", menuCanvas.transform, Vector2.zero, new Vector2(1280f, 720f), BackgroundColor);
+        CreatePanel("Painel da passagem", menuCanvas.transform, Vector2.zero, new Vector2(760f, 300f), PanelColor);
+        CreateText(
+            "Mensagem da passagem",
+            menuCanvas.transform,
+            new Vector2(0f, 42f),
+            new Vector2(680f, 100f),
+            "Encontre a Chave para desbloquear a passagem",
+            28,
+            MainTextColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+
+        Canvas promptCanvas = menuCanvas;
+        Button continueButton = CreateActionButton(
+            "Botao Prosseguir",
+            "PROSSEGUIR",
+            new Vector2(0f, -86f),
+            () =>
+            {
+                Time.timeScale = 1f;
+                Destroy(promptCanvas.gameObject);
+                menuCanvas = null;
+            });
+        EventSystem.current?.SetSelectedGameObject(continueButton.gameObject);
+    }
+
+    public void ShowVictory(int score)
+    {
+        Time.timeScale = 0f;
+        menuCanvas = CreateCanvas("Tela de Vitoria");
+        CreatePanel("Fundo", menuCanvas.transform, Vector2.zero, new Vector2(1280f, 720f), BackgroundColor);
+        CreatePanel("Painel da vitoria", menuCanvas.transform, Vector2.zero, new Vector2(760f, 340f), PanelColor);
+        CreateText(
+            "Titulo da vitoria",
+            menuCanvas.transform,
+            new Vector2(0f, 94f),
+            new Vector2(680f, 70f),
+            "PARABÉNS!",
+            46,
+            AccentColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+        CreateText(
+            "Pontuacao final",
+            menuCanvas.transform,
+            new Vector2(0f, 28f),
+            new Vector2(680f, 54f),
+            $"Pontuação: {score}",
+            30,
+            MainTextColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+
+        int nextBuildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        bool hasNextLevel = nextBuildIndex < SceneManager.sceneCountInBuildSettings;
+        Button continueButton = CreateActionButton(
+            "Botao Continuar",
+            hasNextLevel ? "PRÓXIMA FASE" : "TENTAR O NÍVEL NOVAMENTE",
+            new Vector2(-170f, -78f),
+            () =>
+            {
+                Time.timeScale = 1f;
+                if (hasNextLevel)
+                {
+                    SceneManager.LoadScene(nextBuildIndex);
+                }
+                else
+                {
+                    RestartGame();
+                }
+            });
+        CreateActionButton(
+            "Botao Reiniciar Fase 1",
+            "REINICIAR FASE 1",
+            new Vector2(170f, -78f),
+            RestartFirstLevel);
+        EventSystem.current?.SetSelectedGameObject(continueButton.gameObject);
+    }
+
     private Canvas CreateCanvas(string canvasName)
     {
         GameObject canvasObject = new GameObject(canvasName, typeof(RectTransform));
@@ -284,10 +369,62 @@ public class GameStartMenu : MonoBehaviour
         return button;
     }
 
+    private Button CreateActionButton(string objectName, string label, Vector2 position, UnityEngine.Events.UnityAction action)
+    {
+        GameObject buttonObject = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(Button));
+        buttonObject.transform.SetParent(menuCanvas.transform, false);
+
+        RectTransform rect = buttonObject.GetComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0.5f, 0.5f);
+        rect.anchorMax = new Vector2(0.5f, 0.5f);
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.anchoredPosition = position;
+        rect.sizeDelta = new Vector2(320f, 62f);
+
+        Image image = buttonObject.GetComponent<Image>();
+        image.color = AccentColor;
+
+        Button button = buttonObject.GetComponent<Button>();
+        button.targetGraphic = image;
+        ColorBlock colors = button.colors;
+        colors.normalColor = AccentColor;
+        colors.highlightedColor = new Color(1f, 0.79f, 0.4f, 1f);
+        colors.pressedColor = new Color(0.78f, 0.49f, 0.16f, 1f);
+        button.colors = colors;
+        button.onClick.AddListener(action);
+
+        CreateText(
+            $"Texto {objectName}",
+            buttonObject.transform,
+            Vector2.zero,
+            new Vector2(310f, 62f),
+            label,
+            19,
+            BackgroundColor,
+            FontStyle.Bold,
+            TextAnchor.MiddleCenter);
+
+        return button;
+    }
+
     private void RestartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void RestartFirstLevel()
+    {
+        Time.timeScale = 1f;
+        int firstLevelBuildIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/Fase1.unity");
+        if (firstLevelBuildIndex < 0)
+        {
+            Debug.LogError("A cena Fase1 precisa estar incluída nos Build Settings.", this);
+            RestartGame();
+            return;
+        }
+
+        SceneManager.LoadScene(firstLevelBuildIndex);
     }
 
     private Button CreateStartButton()

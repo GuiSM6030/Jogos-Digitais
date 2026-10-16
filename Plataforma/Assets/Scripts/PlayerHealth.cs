@@ -91,6 +91,17 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void RestoreHealthToFull()
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        currentHealth = MaximumHealth;
+        UpdateHealthBar();
+    }
+
     private void CreateHUD()
     {
         GameObject canvasObject = new GameObject("HUD da Partida", typeof(RectTransform));
