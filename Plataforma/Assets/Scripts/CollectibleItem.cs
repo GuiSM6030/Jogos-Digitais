@@ -52,16 +52,21 @@ public class CollectibleItem : MonoBehaviour
         if (isKey)
         {
             HasKey = true;
+            AudioManager.PlaySfx("chave");
+        }
+        else if (restoresHealth)
+        {
+            AudioManager.PlaySfx("vida");
+            playerHealth.RestoreHealthToFull();
+        }
+        else
+        {
+            AudioManager.PlaySfx("Itens");
         }
 
         if (points > 0)
         {
             GameScore.AddPoints(points);
-        }
-
-        if (restoresHealth)
-        {
-            playerHealth.RestoreHealthToFull();
         }
 
         Destroy(gameObject);

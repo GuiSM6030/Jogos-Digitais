@@ -52,6 +52,37 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         bodyCollider = GetComponent<Collider2D>();
+
+        if (body != null)
+        {
+            body.linearDamping = 0f;
+            body.angularDamping = 0f;
+            body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            body.interpolation = RigidbodyInterpolation2D.Interpolate;
+            body.sleepMode = RigidbodySleepMode2D.NeverSleep;
+
+            PhysicsMaterial2D frictionlessMaterial = new PhysicsMaterial2D("PlayerFrictionless")
+            {
+                friction = 0f,
+                bounciness = 0f,
+                frictionCombine = PhysicsMaterialCombine2D.Minimum,
+                bounceCombine = PhysicsMaterialCombine2D.Minimum
+            };
+            body.sharedMaterial = frictionlessMaterial;
+        }
+
+        if (bodyCollider != null)
+        {
+            PhysicsMaterial2D frictionlessMaterial = new PhysicsMaterial2D("PlayerColliderFrictionless")
+            {
+                friction = 0f,
+                bounciness = 0f,
+                frictionCombine = PhysicsMaterialCombine2D.Minimum,
+                bounceCombine = PhysicsMaterialCombine2D.Minimum
+            };
+            bodyCollider.sharedMaterial = frictionlessMaterial;
+        }
+
         defaultGravityScale = body.gravityScale;
         walkingParameterHash = Animator.StringToHash(walkingParameter);
 
@@ -142,11 +173,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (isClimbing)
         {
-            body.linearVelocity = new Vector2(horizontalInput * moveSpeed, verticalInput * climbSpeed);
+            float targetX = horizontalInput * moveSpeed;
+            float targetY = verticalInput * climbSpeed;
+            body.linearVelocity = new Vector2(
+                Mathf.Lerp(body.linearVelocity.x, targetX, 0.18f),
+                Mathf.Lerp(body.linearVelocity.y, targetY, 0.22f));
         }
         else
         {
-            body.linearVelocity = new Vector2(horizontalInput * moveSpeed, body.linearVelocity.y);
+            float targetX = horizontalInput * moveSpeed;
+            body.linearVelocity = new Vector2(
+                Mathf.Lerp(body.linearVelocity.x, targetX, 0.18f),
+                body.linearVelocity.y);
         }
 
         if (spriteRenderer != null && horizontalInput != 0f)
